@@ -1,0 +1,10 @@
+name: Rules
+main: ChampOfGames\Rules\Main
+version: 0.0.1
+api: 3.7.0
+author: ChampOfGamesYT
+commands:
+  rules:
+    usage: /rules
+    alias: [regeln]
+    description: Zeigt die Regeln
