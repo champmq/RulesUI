@@ -12,7 +12,6 @@ use jojoe77777\FormAPI\SimpleForm;
 class Main extends PluginBase{
  
     public function onEnable() : void{
-        $this->getLogger()->info("Plugin is ready to use");
         $this->saveResource("config.yml");
     }
  
