@@ -15,6 +15,18 @@ class Main extends PluginBase{
         $this->saveResource("config.yml");
     }
  
+ public function onJoin(PlayerJoinEvent $event){
+    
+    $config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
+    $player = $event->getPlayer();
+    
+    if($config->get("open_at_first_join") == true){
+    if($player->hasPlayedBefore() == true){ // true or false
+        // Code
+    }
+}
+}
+ 
     public function openHelpUI($player) { // ACHTUNG: hier ist $player nicht $sender
         $form = new SimpleForm(function (Player $player, int $data = null){
  
