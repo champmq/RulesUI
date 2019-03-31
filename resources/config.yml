@@ -13,6 +13,8 @@ Title: "TITLE"
 Content: "CONTENT"
 
 # Here you can switch the text for the Button
-Button: "BUTTON"
+Button: "BUTTON
 
+# Here you can add if the Player joins that then you have to set it to true
+open at first join=false
 ...
