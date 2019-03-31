@@ -6,5 +6,5 @@ author: ChampOfGamesYT
 commands:
   rules:
     usage: /rules
-    alias: [regeln]
-    description: Zeigt die Regeln
+    alias: [rulesui]
+    description: See the rules of the server
