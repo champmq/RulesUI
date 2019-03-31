@@ -1,4 +1,4 @@
-name: Rules
+name: RulesUI
 main: ChampOfGames\Rules\Main
 version: 0.0.1
 api: 3.7.0
