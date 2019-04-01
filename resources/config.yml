@@ -16,5 +16,5 @@ Content: "CONTENT"
 Button: "BUTTON"
 
 # Here you can add if the Player joins that then you have to set it to true
-open at first join=false
+open_at_first_join: "false"
 ...
