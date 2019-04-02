@@ -19,7 +19,8 @@ class Main extends PluginBase{
     
     $config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
     $player = $event->getPlayer();
-    
+    $this->openHelpUI($player);
+  
     if($config->get("open_at_first_join") == true){
     if($player->hasPlayedBefore() == true){ // true or false
         // $this->openHelpUI($player);
