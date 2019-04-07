@@ -23,7 +23,7 @@ class Main extends PluginBase{
   
     if($config->get("open_at_first_join") == true){
 
- if(!$player->hasPlayedBefore() == true){ 
+ if($player->hasPlayedBefore() == true){ 
 
 $this->openHelpUI($player);
 
