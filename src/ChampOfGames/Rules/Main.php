@@ -27,6 +27,7 @@ class Main extends PluginBase{
 
 $this->openHelpUI($player);
 
+  }
 }
 }
  
