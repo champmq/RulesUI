@@ -13,6 +13,7 @@ class Main extends PluginBase{
  
     public function onEnable() : void{
         $this->saveResource("config.yml");
+     $this->getServer()->getPluginManager()->registerEvent('PlayerJoinEvent', new \pathto\PlayerJoinEvent($this));
     }
  
  public function onJoin(PlayerJoinEvent $event){
