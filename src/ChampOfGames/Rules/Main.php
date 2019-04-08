@@ -8,11 +8,13 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\command\CommandSender;
 use pocketmine\command\Command;
 use jojoe77777\FormAPI\SimpleForm;
+use pocketmine\event\Listener;
  
-class Main extends PluginBase{
+class Main extends PluginBase implements Listener{
  
     public function onEnable() : void{
         $this->saveResource("config.yml");
+     $this->getServer()->getPluginManager()->registerEvents($this, $this);
     }
  
  public function onJoin(PlayerJoinEvent $event){
