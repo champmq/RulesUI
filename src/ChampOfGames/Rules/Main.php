@@ -23,12 +23,9 @@ class Main extends PluginBase implements Listener{
     
     $config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
     $player = $event->getPlayer();
-    $this->openHelpUI($player);
   
     if($config->get("open_at_first_join") == true){
-
  if(!$player->hasPlayedBefore() == true){ 
-
 $this->openHelpUI($player);
 
   }
