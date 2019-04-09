@@ -10,6 +10,7 @@ use pocketmine\command\Command;
 use jojoe77777\FormAPI\SimpleForm;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerJoinEvent;
+use pocketmine\utils\Config;
  
 class Main extends PluginBase implements Listener{
  
