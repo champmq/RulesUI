@@ -69,6 +69,6 @@ $this->openHelpUI($player);
     }
  
     public function onDisable() : void{
-        $this->getLogger()->Plugin.yml (rules)("Bye");
+       $this->getLogger()->info("Bye");
     }
 }
