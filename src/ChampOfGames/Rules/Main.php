@@ -80,7 +80,7 @@ public function openInfoUI($player) { // ACHTUNG: hier ist $player nicht $sender
         
 if($cmd->getName() == "rules") { 
 if($sender instanceof Player) { 	
-$this->openRulesUI 	
+$this->openRulesUI($player);	
    } 
  } 
   return true; 
