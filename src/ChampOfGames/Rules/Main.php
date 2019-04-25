@@ -76,7 +76,7 @@ public function openInfoUI($player) { // ACHTUNG: hier ist $player nicht $sender
         return $form;
     }
 
-    public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
+    public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args) : bool{
         
 if($cmd->getName() == "rules") { 
 if($sender instanceof Player) { 	
