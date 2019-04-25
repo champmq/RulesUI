@@ -85,6 +85,9 @@ public function openInfoUI($player) { // ACHTUNG: hier ist $player nicht $sender
                 return true;
             default:
                 return false;
+             }
+         }
+
 
    switch($command->getName()){
             case "info":
@@ -96,8 +99,6 @@ public function openInfoUI($player) { // ACHTUNG: hier ist $player nicht $sender
                 return false;
           }
         }
-      }
-    }
  
     public function onDisable() : void{
        $this->getLogger()->info("Bye");
