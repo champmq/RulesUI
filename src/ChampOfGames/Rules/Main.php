@@ -15,7 +15,7 @@ use pocketmine\utils\Config;
 class Main extends PluginBase implements Listener{
  
     public function onEnable() : void{
-        $this->saveResource("config.yml");
+        $this->saveResource("rules.yml");
      $this->getServer()->getPluginManager()->registerEvents($this, $this);
     }
  
@@ -46,9 +46,9 @@ $this->openHelpUI($player);
  
         });
  
-        $form->setTitle($this->getConfig()->get("Title"));
-        $form->setContent($this->getConfig()->get("Content"));
-        $form->addButton($this->getConfig()->get("Button"));
+        $form->setTitle($this->getRules()->get("Title"));
+        $form->setContent($this->getRules()->get("Content"));
+        $form->addButton($this->getRules()->get("Button"));
         $form->sendToPlayer($player); // Hier $player! Weil oben auch $player als Spieler definiert wurde!
         return $form;
     }
