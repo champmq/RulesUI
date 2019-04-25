@@ -77,29 +77,15 @@ public function openInfoUI($player) { // ACHTUNG: hier ist $player nicht $sender
     }
 
     public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
-        switch($command->getName()){
-            case "rules":
-                if($sender instanceof Player) {
-                    $this->openRulesUI($sender);
-                }
-                return true;
-            default:
-                return false;
-             }
-         }
+        
+if($cmd->getName() == "rules") { 
+if($sender instanceof Player) { 	
+$this->openRulesUI 	
+   } 
+ } 
+  return true; 
+ }
 
-return $form; } public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
-   switch($command->getName()){
-            case "info":
-                if($sender instanceof Player) {
-                    $this->openInfoUI($sender);
-                }
-                return true;
-            default:
-                return false;
-          }
-        }
- 
     public function onDisable() : void{
        $this->getLogger()->info("Bye");
     }
