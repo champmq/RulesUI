@@ -88,7 +88,7 @@ public function openInfoUI($player) { // ACHTUNG: hier ist $player nicht $sender
              }
          }
 
-
+return $form; } public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
    switch($command->getName()){
             case "info":
                 if($sender instanceof Player) {
