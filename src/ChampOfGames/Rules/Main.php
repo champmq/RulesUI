@@ -28,13 +28,13 @@ class Main extends PluginBase implements Listener{
   
     if($config->get("open_at_first_join") == true){
  if(!$player->hasPlayedBefore() == true){ 
-$this->openHelpUI($player);
+$this->openRulesUI($player);
 
   }
 }
 }
  
-    public function openHelpUI($player) { // ACHTUNG: hier ist $player nicht $sender
+    public function openRulesUI($player) { // ACHTUNG: hier ist $player nicht $sender
         $form = new SimpleForm(function (Player $player, int $data = null){
  
             $result = $data;
@@ -55,16 +55,48 @@ $this->openHelpUI($player);
         return $form;
     }
  
+public function openInfoUI($player) { // ACHTUNG: hier ist $player nicht $sender
+        $form = new SimpleForm(function (Player $player, int $data = null){
+ 
+            $result = $data;
+            if($result === null){
+                return true;
+            }
+            switch($result){
+                case 1:
+                    break;
+            }
+ 
+        });
+ 
+        $form->setTitle($this->getInfo()->get("Title"));
+        $form->setContent($this->getInfo()->get("Content"));
+        $form->addButton($this->getInfo()->get("Button"));
+        $form->sendToPlayer($player); // Hier $player! Weil oben auch $player als Spieler definiert wurde!
+        return $form;
+    }
+
     public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
         switch($command->getName()){
             case "rules":
                 if($sender instanceof Player) {
-                    $this->openHelpUI($sender);
+                    $this->openRulesUI($sender);
                 }
                 return true;
             default:
                 return false;
+
+   switch($command->getName()){
+            case "info":
+                if($sender instanceof Player) {
+                    $this->openInfoUI($sender);
+                }
+                return true;
+            default:
+                return false;
+          }
         }
+      }
     }
  
     public function onDisable() : void{
