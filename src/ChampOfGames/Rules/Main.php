@@ -86,6 +86,8 @@ $this->openRulesUI($player);
   return true; 
  }
 
+public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args) : bool{
+        
 if($cmd->getName() == "info") { 
 if($sender instanceof Player) { 	
 $this->openInfoUI($player);	
