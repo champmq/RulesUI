@@ -6,5 +6,9 @@ author: ChampOfGamesYT
 commands:
   rules:
     usage: /rules
-    alias: [rulesui]
+    aliases: [rulesui]
     description: See the rules of the server
+  info:
+    usage: /infi
+    aliases: [infoui]
+    description: See information about the server
