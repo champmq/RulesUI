@@ -23,7 +23,7 @@ class Main extends PluginBase implements Listener{
  
  public function onJoin(PlayerJoinEvent $event){
     
-    $config = new Config($this->getDataFolder() . "rules.yml", Config::YAML);
+    $config = new Config($this->getDataFolder() ."rules.yml", Config::YAML);
     $player = $event->getPlayer();
   
     if($config->get("open_at_first_join") == true){
