@@ -17,13 +17,13 @@ class Main extends PluginBase implements Listener{
     public function onEnable() : void{
         $this->saveResource("rules.yml");
         $this->saveResource("info.yml");
+        $info = new Congig($this->getDataFolder() . "info.yml, Config::YAML);
      $this->getServer()->getPluginManager()->registerEvents($this, $this);
     }
  
  public function onJoin(PlayerJoinEvent $event){
     
     $config = new Config($this->getDataFolder() . "rules.yml", Config::YAML);
-    $info = new Config($this->getDataFoler() . "info.yml", Config::YAML);
     $player = $event->getPlayer();
   
     if($config->get("open_at_first_join") == true){
