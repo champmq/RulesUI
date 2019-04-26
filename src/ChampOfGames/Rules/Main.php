@@ -1,3 +1,4 @@
+
 <?php
 declare(strict_types=1);
  
@@ -15,26 +16,24 @@ use pocketmine\utils\Config;
 class Main extends PluginBase implements Listener{
  
     public function onEnable() : void{
-        $this->saveResource("rules.yml");
-        $this->saveResource("info.yml");
-        $info = new Congig($this->getDataFolder() . "info.yml, Config::YAML);
+        $this->saveResource("config.yml");
      $this->getServer()->getPluginManager()->registerEvents($this, $this);
     }
  
  public function onJoin(PlayerJoinEvent $event){
     
-    $config = new Config($this->getDataFolder() . "rules.yml", Config::YAML);
+    $config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
     $player = $event->getPlayer();
   
     if($config->get("open_at_first_join") == true){
  if(!$player->hasPlayedBefore() == true){ 
-$this->openRulesUI($player);
+$this->openHelpUI($player);
 
   }
 }
 }
  
-    public function openRulesUI($player) { // ACHTUNG: hier ist $player nicht $sender
+    public function openHelpUI($player) { // ACHTUNG: hier ist $player nicht $sender
         $form = new SimpleForm(function (Player $player, int $data = null){
  
             $result = $data;
@@ -48,51 +47,25 @@ $this->openRulesUI($player);
  
         });
  
-        $form->setTitle($this->getRules()->get("Title"));
-        $form->setContent($this->getRules()->get("Content"));
-        $form->addButton($this->getRules()->get("Button"));
+        $form->setTitle($this->getConfig()->get("Title"));
+        $form->setContent($this->getConfig()->get("Content"));
+        $form->addButton($this->getConfig()->get("Button"));
         $form->sendToPlayer($player); // Hier $player! Weil oben auch $player als Spieler definiert wurde!
         return $form;
     }
  
-public function openInfoUI($player) { // ACHTUNG: hier ist $player nicht $sender
-        $form = new SimpleForm(function (Player $player, int $data = null){
- 
-            $result = $data;
-            if($result === null){
+    public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
+        switch($command->getName()){
+            case "rules":
+                if($sender instanceof Player) {
+                    $this->openHelpUI($sender);
+                }
                 return true;
-            }
-            switch($result){
-                case 1:
-                    break;
-            }
- 
-        });
- 
-        $form->setTitle($this->getInfo()->get("Title"));
-        $form->setContent($this->getInfo()->get("Content"));
-        $form->addButton($this->getInfo()->get("Button"));
-        $form->sendToPlayer($player); // Hier $player! Weil oben auch $player als Spieler definiert wurde!
-        return $form;
+            default:
+                return false;
+        }
     }
-
-    public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args) : bool{
-        
-if($cmd->getName() == "rules") { 
-if($sender instanceof Player) { 	
-$this->openRulesUI($player);	
-   } 
- } 
-  return true; 
-        
-if($cmd->getName() == "info") { 
-if($sender instanceof Player) { 	
-$this->openInfoUI($player);	
-   } 
- } 
-  return true; 
- }
-
+ 
     public function onDisable() : void{
        $this->getLogger()->info("Bye");
     }
