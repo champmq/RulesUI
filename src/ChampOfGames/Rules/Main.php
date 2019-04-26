@@ -1,5 +1,5 @@
-
 <?php
+
 declare(strict_types=1);
  
 namespace ChampOfGames\Rules;
@@ -61,8 +61,6 @@ $this->openHelpUI($player);
                     $this->openHelpUI($sender);
                 }
                 return true;
-            default:
-                return false;
         }
     }
  
