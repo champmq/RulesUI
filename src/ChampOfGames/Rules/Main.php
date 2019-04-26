@@ -86,6 +86,14 @@ $this->openRulesUI($player);
   return true; 
  }
 
+if($cmd->getName() == "info") { 
+if($sender instanceof Player) { 	
+$this->openInfoUI($player);	
+   } 
+ } 
+  return true; 
+ }
+
     public function onDisable() : void{
        $this->getLogger()->info("Bye");
     }
