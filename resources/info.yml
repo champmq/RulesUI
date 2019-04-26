@@ -1,1 +1,18 @@
-# This is nor finished yet don't use this config file.
+---
+ 
+# If you want to add a paragraph then you only have to do 
+# \n at the text then the text one goes down for example: Test\nTest = Test 
+#                                                                     Test 
+# So if you do this twice (\n\n), there's an empty line between the exampel Test
+
+ 
+# Here you can switch the Description
+Title: "TITLE"
+ 
+# Here you can switch the content
+Content: "CONTENT"
+ 
+# Here you can switch the text for the Button
+Button: "BUTTON"
+ 
+
