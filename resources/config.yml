@@ -4,7 +4,6 @@
 # \n at the text then the text one goes down for example: Test\nTest = Test 
 #                                                                     Test 
 # So if you do this twice (\n\n), there's an empty line between the example Test
-# You can use {player} to get the name of a player
  
 # Here you can switch the Description
 Title: "TITLE"
