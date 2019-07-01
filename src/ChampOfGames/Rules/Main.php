@@ -17,7 +17,6 @@ class Main extends PluginBase implements Listener{
     public function onEnable() : void{
         $this->saveResource("config.yml");
      $this->getServer()->getPluginManager()->registerEvents($this, $this);
-     $name = str_replace("{name}", $player->getName(), $message);
     } 
  
  public function onJoin(PlayerJoinEvent $event){
@@ -59,6 +58,7 @@ $this->openHelpUI($player);
             case "rules":
                 if($sender instanceof Player) {
                     $this->openHelpUI($sender);
+     $name = str_replace("{name}", $sender->getName(), $message);
                 }
                 return true;
             default:
