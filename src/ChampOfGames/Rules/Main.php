@@ -58,7 +58,6 @@ $this->openHelpUI($player);
             case "rules":
                 if($sender instanceof Player) {
                     $this->openHelpUI($sender);
-     $name = str_replace("{name}", $sender->getName(), $message);
                 }
                 return true;
             default:
